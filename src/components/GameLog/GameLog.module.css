@@ -1,0 +1,29 @@
+.log {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid #8b5e3c;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  height: 140px;
+  overflow-y: auto;
+  font-size: 0.72rem;
+  color: #c8a97a;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.entry {
+  line-height: 1.4;
+  border-bottom: 1px solid rgba(139,94,60,0.2);
+  padding-bottom: 2px;
+}
+
+.turnBadge {
+  color: #8b5e3c;
+  font-size: 0.65rem;
+  margin-right: 4px;
+}
+
+.highlight {
+  color: #f5e4a0;
+}

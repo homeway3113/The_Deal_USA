@@ -1,0 +1,68 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: #2c1a0e;
+  border: 2px solid #c8a000;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  color: #f5e4a0;
+  min-width: 260px;
+}
+
+.context {
+  font-size: 0.85rem;
+  color: #c8a97a;
+  margin-bottom: 1rem;
+}
+
+.die {
+  font-size: 5rem;
+  display: block;
+  margin: 0.5rem auto;
+  cursor: pointer;
+  transition: transform 0.1s;
+  user-select: none;
+}
+.die:hover { transform: scale(1.1); }
+.die.rolling { animation: spin 0.4s ease-out; }
+
+@keyframes spin {
+  0%   { transform: rotate(0deg) scale(0.8); }
+  50%  { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.result {
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0.5rem 0;
+}
+
+.resultLabel {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.success { color: #2ecc71; }
+.failure { color: #e74c3c; }
+
+.rollBtn {
+  padding: 0.6rem 1.5rem;
+  background: #c8a000;
+  color: #1a0a00;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.rollBtn:hover { filter: brightness(1.1); }

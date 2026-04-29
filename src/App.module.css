@@ -1,0 +1,110 @@
+.app {
+  min-height: 100vh;
+  background: #1a0a00;
+  color: #f5e4a0;
+  font-family: 'Georgia', serif;
+}
+
+.gameScreen {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.centerCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  min-width: 0;
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  width: 180px;
+}
+
+.gameHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #8b5e3c;
+}
+
+.gameTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #c8a000;
+  letter-spacing: 0.05em;
+}
+
+.turnInfo {
+  font-size: 0.75rem;
+  color: #c8a97a;
+}
+
+/* Win overlay */
+.winOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.winCard {
+  background: #2c1a0e;
+  border: 3px solid #c8a000;
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  color: #f5e4a0;
+}
+
+.winCrown {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 20px #c8a000);
+}
+
+.winTitle {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #c8a000;
+  margin: 0 0 0.5rem;
+}
+
+.winSubtitle {
+  font-size: 1rem;
+  color: #c8a97a;
+  margin: 0 0 2rem;
+}
+
+.playAgainBtn {
+  padding: 0.75rem 2rem;
+  background: #c8a000;
+  color: #1a0a00;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.playAgainBtn:hover { filter: brightness(1.1); }
