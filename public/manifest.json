@@ -1,0 +1,24 @@
+{
+  "name": "Crown of Arkaditya",
+  "short_name": "Arkaditya",
+  "description": "Seize the 16 shards and reforge the Crown of Arkaditya. A turn-based strategy board game.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a0a00",
+  "theme_color": "#c8a000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

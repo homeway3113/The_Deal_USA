@@ -8,14 +8,20 @@
   flex-shrink: 0;
 }
 
+/* On mobile, panels are full-width */
+@media (max-width: 699px) {
+  .panel {
+    width: 100%;
+    flex-shrink: unset;
+  }
+}
+
 .panel.active {
   border-color: #c8a000;
   box-shadow: 0 0 8px rgba(200,160,0,0.4);
 }
 
-.panel.eliminated {
-  opacity: 0.4;
-}
+.panel.eliminated { opacity: 0.4; }
 
 .header {
   display: flex;
@@ -34,6 +40,7 @@
 .name {
   font-size: 0.85rem;
   font-weight: 700;
+  flex: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -55,11 +62,7 @@
   margin-bottom: 0.5rem;
 }
 
-.stat {
-  display: flex;
-  justify-content: space-between;
-}
-
+.stat { display: flex; justify-content: space-between; }
 .statLabel { color: #c8a97a; }
 .statValue { color: #f5e4a0; font-weight: 700; }
 
@@ -78,8 +81,8 @@
 }
 
 .shardBadge {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 3px;
   background: #8b5e3c;
   display: flex;

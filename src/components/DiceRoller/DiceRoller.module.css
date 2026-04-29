@@ -1,68 +1,97 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   z-index: 100;
+  padding: 0 0 max(1rem, env(safe-area-inset-bottom)) 0;
+}
+
+@media (min-width: 500px) {
+  .overlay { align-items: center; }
 }
 
 .modal {
   background: #2c1a0e;
   border: 2px solid #c8a000;
-  border-radius: 12px;
-  padding: 2rem;
+  border-radius: 16px 16px 0 0;
+  padding: 1.75rem 1.5rem;
   text-align: center;
   color: #f5e4a0;
-  min-width: 260px;
+  width: 100%;
+  max-width: 420px;
+}
+
+@media (min-width: 500px) {
+  .modal {
+    border-radius: 16px;
+    width: auto;
+    min-width: 280px;
+    padding: 2rem;
+  }
 }
 
 .context {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #c8a97a;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.thresholdLabel {
+  font-size: 0.75rem;
+  color: #8b5e3c;
+  margin-bottom: 0.75rem;
 }
 
 .die {
   font-size: 5rem;
   display: block;
-  margin: 0.5rem auto;
+  margin: 0.25rem auto;
   cursor: pointer;
   transition: transform 0.1s;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
-.die:hover { transform: scale(1.1); }
+.die:active { transform: scale(0.95); }
 .die.rolling { animation: spin 0.4s ease-out; }
 
 @keyframes spin {
-  0%   { transform: rotate(0deg) scale(0.8); }
-  50%  { transform: rotate(180deg) scale(1.2); }
+  0%   { transform: rotate(0deg) scale(0.8); opacity: 0.5; }
+  50%  { transform: rotate(180deg) scale(1.2); opacity: 1; }
   100% { transform: rotate(360deg) scale(1); }
 }
 
 .result {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 900;
-  margin: 0.5rem 0;
+  margin: 0.25rem 0;
 }
 
 .resultLabel {
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
 }
 
 .success { color: #2ecc71; }
 .failure { color: #e74c3c; }
 
 .rollBtn {
-  padding: 0.6rem 1.5rem;
+  padding: 0.75rem 2rem;
   background: #c8a000;
   color: #1a0a00;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 1rem;
   font-weight: 700;
+  font-family: 'Georgia', serif;
   cursor: pointer;
+  min-height: 52px;
+  min-width: 160px;
+  -webkit-tap-highlight-color: transparent;
 }
-.rollBtn:hover { filter: brightness(1.1); }
+.rollBtn:hover  { filter: brightness(1.1); }
+.rollBtn:active { filter: brightness(0.9); }

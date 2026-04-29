@@ -12,6 +12,18 @@
   aspect-ratio: 7/9;
 }
 
+/* On mobile fill the screen width */
+@media (max-width: 699px) {
+  .board {
+    max-width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    gap: 1px;
+    padding: 2px;
+  }
+}
+
 /* Base tile */
 .tile {
   position: relative;
@@ -27,33 +39,41 @@
   aspect-ratio: 1;
   overflow: hidden;
   transition: filter 0.15s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Tile types */
-.tile_empty { background: #c8a97a; }
-.tile_shard { background: #f5e4a0; border: 2px solid #c8a000; }
-.tile_city  { background: #d4856b; border: 1px solid #9b4a2a; }
-.tile_start { background: #a8d8a8; border: 2px solid #3a8a3a; }
-.tile_river { background: #4a90d9; cursor: not-allowed; }
-.tile_mountain { background: #888; cursor: not-allowed; }
+.tile_empty    { background: #c8a97a; }
+.tile_shard    { background: #f5e4a0; border: 2px solid #c8a000; }
+.tile_city     { background: #d4856b; border: 1px solid #9b4a2a; }
+.tile_start    { background: #a8d8a8; border: 2px solid #3a8a3a; }
+.tile_river    { background: #4a90d9; cursor: not-allowed; }
+.tile_mountain { background: #888;    cursor: not-allowed; }
 
 /* Interaction states */
 .tile_valid {
   background: #ffe066 !important;
   cursor: pointer;
   box-shadow: 0 0 0 2px #c8a000 inset;
+  animation: pulse 1s ease-in-out infinite alternate;
 }
-.tile_valid:hover { filter: brightness(1.1); }
-.tile_selected {
-  box-shadow: 0 0 0 3px #e74c3c inset;
+@keyframes pulse {
+  from { filter: brightness(1); }
+  to   { filter: brightness(1.15); }
 }
+.tile_valid:active { filter: brightness(0.9); }
 
-/* Label */
+/* Labels */
 .tileLabel {
   font-size: 0.7rem;
   font-weight: 800;
   color: #2c1a0e;
   line-height: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 699px) {
+  .tileLabel { font-size: 0.6rem; }
 }
 
 /* Units and players */
@@ -65,6 +85,7 @@
   bottom: 1px;
   left: 1px;
   right: 1px;
+  pointer-events: none;
 }
 
 .unit, .playerToken {
@@ -78,6 +99,14 @@
   color: #fff;
   font-weight: 700;
   border: 1px solid rgba(0,0,0,0.3);
+}
+
+@media (max-width: 699px) {
+  .unit, .playerToken {
+    width: 11px;
+    height: 11px;
+    font-size: 0.45rem;
+  }
 }
 
 .tilePlayers {
