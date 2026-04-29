@@ -1,5 +1,5 @@
-import { Board, Position } from './board';
-import { ItemType, DeployedUnit } from './items';
+import type { Board, Position } from './board';
+import type { ItemType, DeployedUnit } from './items';
 
 export type Phase =
   | 'LOBBY'

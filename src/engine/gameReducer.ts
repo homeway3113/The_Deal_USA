@@ -66,9 +66,6 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
     if (idx >= 0 && idx < phaseOrder.length - 1) {
       return { ...state, phase: phaseOrder[idx + 1] };
     }
-    if (state.phase === 'INCOME') {
-      return incomePhase(state);
-    }
   }
 
   return state;

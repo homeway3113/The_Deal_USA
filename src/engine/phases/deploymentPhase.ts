@@ -31,11 +31,10 @@ export function deploymentPhaseReducer(state: GameState, action: GameAction): Ga
       const updatedPlayer = {
         ...player,
         bridges: player.bridges + 1,
-        inventory: player.inventory.filter((v, i) => {
+        inventory: player.inventory.filter((_, i) => {
           const idx = player.inventory.indexOf(item);
           return i !== idx;
         }),
-        hasMarried: item === 'MARRIAGE' ? true : player.hasMarried,
       };
       return {
         ...state,

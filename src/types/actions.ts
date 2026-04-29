@@ -1,6 +1,6 @@
-import { Position } from './board';
-import { ItemType } from './items';
-import { PlayerType } from './game';
+import type { Position } from './board';
+import type { ItemType } from './items';
+import type { PlayerType } from './game';
 
 export type GameAction =
   | { type: 'START_GAME'; payload: { playerCount: number; playerTypes: PlayerType[] } }
